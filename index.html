@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLBD - লাইভ টিভি দেখুন</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" id="logo-link" class="logo-link">
+                <!-- আপনার নিজের লোগো এখানে ব্যবহার করা হয়েছে -->
+                <img src="/images/glbd-logo.png" alt="GLBD Logo" class="site-logo">
+            </a>
+            <div class="logo-name">
+                <h1>GLBD-TV</h1> 
+            </div>
+            <nav class="main-nav">
+                <a href="#" id="home-link" class="active">HOME</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-content-container">
+        <main class="main-content">
+            <div class="main-player-wrapper">
+                <div id="player-container" class="player-container">
+                    <video id="main-video-player" controls autoplay muted></video>
+                    <div id="player-overlay" class="player-overlay"><p>একটি চ্যানেল সিলেক্ট করুন</p></div>
+                </div>
+                <div id="current-channel-info" class="channel-info-bar">
+                    <img id="current-channel-logo" src="" alt="লোগো">
+                    <div><h2 id="current-channel-name"></h2><p id="current-channel-description"></p></div>
+                </div>
+            </div>
+            <div class="channel-grid-section">
+                <h3>সকল চ্যানেল</h3>
+                <div id="channel-grid" class="channel-grid"></div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 GLBD. সর্বস্বত্ব সংরক্ষিত।</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="script.js"></script>
+</body>
+</html>

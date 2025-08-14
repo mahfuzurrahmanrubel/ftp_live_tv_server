@@ -1,0 +1,48 @@
+:root {
+    --bg-dark: #0f1014; --bg-medium: #1c1d21; --bg-light: #2a2c31;
+    --text-primary: #f0f0f0; --text-secondary: #a0a0b0; --accent: #00aaff;
+    --online: #2ecc71; --offline: #e74c3c;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background-color: var(--bg-dark); color: var(--text-primary); font-family: 'Hind Siliguri', sans-serif; }
+.site-header, footer { background-color: var(--bg-medium); padding: 0.7rem 0; }
+footer { margin-top: 1.5rem; border-top: 1px solid var(--bg-light); text-align: center; color: var(--text-secondary); }
+.header-container, .main-content-container, .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.site-header .header-container { display: flex; justify-content: space-between; align-items: center; }
+.logo-link { text-decoration: none; }
+.site-logo { height: 40px; width: auto; display: block; }
+.main-nav a { color: var(--text-secondary); text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: color 0.3s ease; }
+.main-nav a:hover, .main-nav a.active { color: var(--text-primary); }
+.disabled-link { color: #666 !important; cursor: not-allowed; }
+.main-content { padding: 2rem 0; }
+.player-container { position: relative; width: 100%; aspect-ratio: 16 / 9; background-color: #000; border-radius: 8px; overflow: hidden; }
+#main-video-player { width: 100%; height: 100%; display: block;  object-fit: contain;  }
+.player-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.7); font-size: 1.5rem; pointer-events: none; opacity: 1; transition: opacity 0.5s ease; }
+.player-overlay.hidden { opacity: 0; }
+.channel-info-bar { display: flex; align-items: center; padding: 0.8rem 1rem; background-color: var(--bg-medium); border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; margin-top: -4px; }
+.channel-info-bar img { height: 50px; margin-right: 1.5rem; border-radius: 4px; }
+#current-channel-name { font-size: 1.5rem; font-weight: 600; }
+#current-channel-description { color: var(--text-secondary); font-size: 0.9rem; }
+.channel-grid-section { margin-top: 2rem; }
+.channel-grid-section h3 { font-size: 1.8rem; margin-bottom: 1.5rem; border-left: 4px solid var(--accent); padding-left: 1rem; }
+.channel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1.5rem; }
+.channel-item { background-color: var(--bg-medium); border-radius: 8px; text-align: center; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; border: 2px solid transparent; position: relative; overflow: hidden; }
+.channel-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); border-color: var(--accent); }
+.channel-item img { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #fff; padding: 10px; }
+.channel-name { padding: 0.8rem; font-weight: 500; }
+.status-indicator { position: absolute; top: 8px; right: 8px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--bg-dark); }
+.status-indicator.online { background-color: var(--online); }
+.status-indicator.offline { background-color: var(--offline); }
+
+/* --- লাইভ প্লেয়ারের টাইমলাইন এবং সময় লুকানোর জন্য চূড়ান্ত কোড --- */
+#main-video-player::-webkit-media-controls-timeline,
+#main-video-player::-webkit-media-controls-time-remaining-display,
+#main-video-player::-webkit-media-controls-current-time-display {
+    display: none !important;
+}
+
+#main-video-player::-moz-media-controls-timeline,
+#main-video-player::-moz-media-controls-time-remaining-display,
+#main-video-player::-moz-media-controls-current-time-display {
+    display: none !important;
+}
