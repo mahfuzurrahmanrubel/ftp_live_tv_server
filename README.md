@@ -1,6 +1,8 @@
 # ftp_live_tv_server
 isp jonno tv server (local+public) 
 -------------------------------------
+Fast e ubuntu te login kore then necher comment gula dete hobe 
+
 $ sudo apt update && sudo apt upgrade -y
 
 # curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
